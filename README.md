@@ -52,8 +52,8 @@ ui-backend-for-famanager は、AIONプラットフォーム が 提供する FA�
 
 1. 以下のコマンドでDockerイメージをビルドします  
 `$ make docker-build`
-2. aion-service-definitions の services.yml に以下のように記載し、AION を実行します  
-```yaml
+2. services.yml に以下のように記載し、AION を実行します  
+```
   ui-backend-for-famanager:
     scale: 1
     startup: yes
@@ -64,10 +64,10 @@ ui-backend-for-famanager は、AIONプラットフォーム が 提供する FA�
       DATA_DIR: /var/lib/aion/Data/
       MYSQL_HOST: mysql
       MYSQL_PORT: 3306
-      MYSQL_USER: [MySQL ユーザ名]
-      MYSQL_PASSWORD: [MySQL パスワード]
+      MYSQL_USER: XXXXX
+      MYSQL_PASSWORD: XXXXXXXX
       DB_NAME: FAManager
-      RABBITMQ_URL: amqp://[RabbitMQ ユーザ名]:[RabbitMQ パスワード]@rabbitmq:5672/pokayoke
+      RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672/pokayoke
       QUEUE_TO_TEMPLATE_1: template-matching-by-opencv-for-rtsp-1-queue
       QUEUE_TO_TEMPLATE_2: template-matching-by-opencv-for-rtsp-2-queue
     volumeMountPathList:

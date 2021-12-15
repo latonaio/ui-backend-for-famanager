@@ -1,0 +1,32 @@
+  ui-backend-for-famanager:
+    scale: 1
+    startup: yes
+    always: yes
+    network: NodePort
+    env:
+      PUBLIC_DIR: /var/lib/aion/UI/ui-backend-for-famanager/public
+      DATA_DIR: /var/lib/aion/Data/
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_USER: XXXXX
+      MYSQL_PASSWORD: XXXXXXXX
+      DB_NAME: FAManager
+      RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672/pokayoke
+      QUEUE_TO_TEMPLATE_1: template-matching-by-opencv-for-rtsp-1-queue
+      QUEUE_TO_TEMPLATE_2: template-matching-by-opencv-for-rtsp-2-queue
+    volumeMountPathList:
+      - /var/lib/aion/UI/ui-backend-for-famanager/public:/var/lib/aion/default/UI/ui-backend-for-famanager/public
+    ports:
+      - name: api
+        port: 8080
+        protocol: TCP
+        nodePort: 30081
+      - name: streaming1
+        port: 30555
+        protocol: TCP
+        nodePort: 30555
+      - name: streaming2
+        port: 30556
+        protocol: TCP
+        nodePort: 30556
+        
