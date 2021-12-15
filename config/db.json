@@ -1,0 +1,46 @@
+{
+  "development": {
+    "mysql": {
+      "host": "127.0.0.1",
+      "port": "30000",
+      "user": "xxxxx",
+      "password": "xxxxxx",
+      "database": "FAManager"
+    },
+    "mongo": {
+      "host": "127.0.0.1",
+      "port": "27017",
+      "db": "ServiceBroker",
+      "collection": "AfterProcessing"
+    },
+    "redis": {
+      "host": "127.0.0.1",
+      "port": 6379,
+      "db": {
+        "matching": 1
+      }
+    }
+  },
+  "production": {
+    "mysql": {
+      "host": "mysql",
+      "port": "3306",
+      "user": "xxxxx",
+      "password": "xxxxxx",
+      "database": "FAManager"
+    },
+    "mongo": {
+      "host": "mongo",
+      "port": "27017",
+      "db": "ServiceBroker",
+      "collection": "AfterProcessing"
+    },
+    "redis": {
+      "host": "redis-cluster",
+      "port": "6379",
+      "db": {
+        "matching": 1
+      }
+    }
+  }
+}

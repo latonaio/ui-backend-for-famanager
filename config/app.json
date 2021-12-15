@@ -1,0 +1,12 @@
+{
+  "development": {
+    "secret": "application-secret-key",
+    "tempDir": "../public/temp",
+    "uploadDir": "../public/uploads"
+  },
+  "production": {
+    "secret": "application-secret-key",
+    "tempDir": "../public/temp",
+    "uploadDir": "../public/uploads"
+  }
+}
