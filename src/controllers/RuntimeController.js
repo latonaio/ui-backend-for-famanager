@@ -7,7 +7,7 @@ const Points = require('../models/Points');
 const Cameras = require('../models/Cameras');
 const directoryConstants = require('../constants/directory.constants');
 
-const { getRabbitmqClient, QUEUE_TO_TEMPLATE_1, QUEUE_TO_TEMPLATE_2 } = require('../rabbitmq');
+const { getRabbitmqClient, QUEUE_TO_TEMPLATE, QUEUE_TO_TEMPLATE_2 } = require('../rabbitmq');
 
 const { asyncHandler } = require('../util');
 
@@ -113,7 +113,7 @@ export const setTemplatesToAll = asyncHandler(async (req, res) => {
       console.log(`serviceName: ${serviceName}, payload:`, payload);
 
       const queueName = {
-        'template-1': QUEUE_TO_TEMPLATE_1,
+        'template-1': QUEUE_TO_TEMPLATE,
         'template-2': QUEUE_TO_TEMPLATE_2,
       }[serviceName];
 

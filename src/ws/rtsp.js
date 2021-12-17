@@ -67,11 +67,11 @@ function getNodePort(type) {
 
 function getURL(usageID, type) {
   if (type === 'test') {
-    return `rtsp://stream-usb-video-by-rtsp-multiple-camera-${usageID}-001-srv:${
+    return `rtsp://stream-usb-video-by-rtsp-multiple-camera${usageID > 1 ? `-${usageID}` : ''}-001-srv:${
       DEFAULT_RAW_DATA_PORT_NO + usageID
     }/usb`;
   } else if (type === 'production') {
-    return `rtsp://template-matching-by-opencv-for-rtsp-${usageID}-001-srv:${
+    return `rtsp://template-matching-by-opencv-for-rtsp${usageID > 1 ? `-${usageID}` : ''}-001-srv:${
       DEFAULT_MATCHING_RESULT_PORT_NO + usageID
     }/fitness`;
   } else {

@@ -67,8 +67,8 @@ ui-backend-for-famanager は、AIONプラットフォーム が 提供する FA�
       MYSQL_USER: XXXXX
       MYSQL_PASSWORD: XXXXXXXX
       DB_NAME: FAManager
-      RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672/pokayoke
-      QUEUE_TO_TEMPLATE_1: template-matching-by-opencv-for-rtsp-1-queue
+      RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672/famanager
+      QUEUE_TO_TEMPLATE: template-matching-by-opencv-for-rtsp-queue
       QUEUE_TO_TEMPLATE_2: template-matching-by-opencv-for-rtsp-2-queue
     volumeMountPathList:
       - /var/lib/aion/UI/ui-backend-for-famanager/public:/var/lib/aion/default/UI/ui-backend-for-famanager/public
@@ -77,7 +77,7 @@ ui-backend-for-famanager は、AIONプラットフォーム が 提供する FA�
         port: 8080
         protocol: TCP
         nodePort: 30081
-      - name: streaming1
+      - name: streaming
         port: 30555
         protocol: TCP
         nodePort: 30555
